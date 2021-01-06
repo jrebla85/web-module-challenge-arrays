@@ -46,7 +46,8 @@ Use the copy function below to do the following:
 */
 
 function copy(originalFlavors) {
-    return originalFlavors;
+    const newFlavors = originalFlavors
+    return newFlavors;
 }
 
 console.log(copy(originalFlavors))
@@ -87,8 +88,9 @@ Use the addFlavor function below to do the following:
 
 
 function addFlavor(originalFlavors) {
-    originalFlavors.unshift("Rainbow Sherbert");
-    return originalFlavors;
+    const newFlavors = originalFlavors;
+    newFlavors.unshift("Rainbow Sherbert");
+    return newFlavors;
 }
 
 console.log(addFlavor(originalFlavors))
@@ -106,8 +108,9 @@ Use the removeLastFlavor function below to do the following:
 */
 
 function removeLastFlavor(originalFlavors) {
-    originalFlavors.pop()
-    return originalFlavors
+    const newFlavors = originalFlavors;
+    newFlavors.pop();
+    return newFlavors;
 }
 
 console.log(removeLastFlavor(originalFlavors))
@@ -126,7 +129,8 @@ Use the getFlavorByIndex function below to do the following:
 */
 
 function getFlavorByIndex(originalFlavors, num) {
-    return originalFlavors[num];
+    const newFlavors = originalFlavors
+    return newFlavors[num];
 }
 
 console.log(getFlavorByIndex(originalFlavors, 2))
@@ -147,9 +151,13 @@ Use the removeFlavorByName function below to do the following:
     HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/) {
-    /*your code here*/
+function removeFlavorByName(originalFlavors, flavor) {
+    const newFlavors = originalFlavors;
+    newFlavors.splice(originalFlavors.indexOf(flavor), 1);
+    return newFlavors
 }
+
+console.log(removeFlavorByName(originalFlavors, "Rocky Road"))
 
 
 
@@ -173,9 +181,18 @@ Use the filterByWord function below to do the following:
     DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(/*your code here*/) {
-    /*your code here*/
+function filterByWord(originalFlavors, flavor) {
+    const newFlavors = [];
+
+    for (let i = 0; i < originalFlavors.length; i++) {
+        if (originalFlavors[i].includes(flavor)) {
+            newFlavors.push(originalFlavors[i]);
+        }
+    }
+    return newFlavors;
 }
+
+console.log(filterByWord(originalFlavors, Chocolate))
 
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/
